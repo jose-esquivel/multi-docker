@@ -3,18 +3,18 @@ services:
  - docker
 
 before_install: 
-  - docker build -t jluisev/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t jesquivel2/react-test -f ./client/Dockerfile.dev ./client
 
 script: 
-  - docker run -e CI=true jluisev/react-test npm run test -- --coverage
+  - docker run -e CI=true jesquivel2/react-test npm run test -- --coverage
 
 after_success:
-  - docker build -t jluisev/multi-client ./client
-  - docker build -t jluisev/multi-nginx ./nginx
-  - docker build -t jluisev/multi-server ./server
-  - docker build -t jluisev/multi-worker ./ worker
+  - docker build -t jesquivel2/multi-client ./client
+  - docker build -t jesquivel2/multi-nginx ./nginx
+  - docker build -t jesquivel2/multi-server ./server
+  - docker build -t jesquivel2/multi-worker ./ worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push jluisev/multi-client
-  - docker push jluisev/multi-nginx
-  - docker push jluisev/multi-server
-  - docker push jluisev/multi-worker
+  - docker push jesquivel2/multi-client
+  - docker push jesquivel2/multi-nginx
+  - docker push jesquivel2/multi-server
+  - docker push jesquivel2/multi-worker
