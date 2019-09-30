@@ -12,7 +12,7 @@ after_success:
   - docker build -t jesquivel2/multi-client ./client
   - docker build -t jesquivel2/multi-nginx ./nginx
   - docker build -t jesquivel2/multi-server ./server
-  - docker build -t jesquivel2/multi-worker ./ worker
+  - docker build -t jesquivel2/multi-worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push jesquivel2/multi-client
   - docker push jesquivel2/multi-nginx
