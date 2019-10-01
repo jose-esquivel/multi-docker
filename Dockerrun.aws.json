@@ -18,14 +18,15 @@
         {
             "name": "worker",
             "image": "jesquivel2/multi-worker",
+            "hostname": "worker",
             "essential": false,
             "memory": 128
         },
         {
             "name": "nginx",
             "image": "jesquivel2/multi-nginx",
-            "essential": true,
             "hostname": "nginx",
+            "essential": true,
             "portMappings": [
                 {
                     "hostPort": 80,
