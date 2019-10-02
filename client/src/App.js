@@ -12,7 +12,7 @@ function App() {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            Enter a number below to calculate the value of the Fibonacci sequence at that index.
           </p>
           <Link to="/">Home</Link>
           <Link to="/otherpage">Other Page</Link>
